@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosso Reencontro ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#dff6ff,#fff7e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+body::before{
+    content:"🐾 💻 ❤️ 🌾";
+    position:absolute;
+    font-size:120px;
+    opacity:.05;
+    width:100%;
+    text-align:center;
+    top:20%;
+}
+
+.card{
+
+    width:700px;
+    max-width:92%;
+    background:white;
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+h1{
+
+    font-family:'Caveat',cursive;
+    font-size:55px;
+    color:#ff4f81;
+    margin-bottom:10px;
+
+}
+
+.sub{
+
+    color:#666;
+    margin-bottom:35px;
+
+}
+
+.historia{
+
+    text-align:left;
+    background:#fafafa;
+    border-radius:15px;
+    padding:20px;
+    line-height:1.8;
+    color:#555;
+    margin-bottom:35px;
+
+}
+
+.historia strong{
+    color:#ff4f81;
+}
+
+.contador{
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-bottom:30px;
+
+}
+
+.box{
+
+    background:#f8fbff;
+    border-radius:15px;
+    padding:20px;
+    width:120px;
+
+}
+
+.numero{
+
+    font-size:48px;
+    font-weight:bold;
+    color:#3b82f6;
+
+}
+
+.texto{
+
+    color:#777;
+}
+
+.frase{
+
+    font-family:'Caveat';
+    font-size:36px;
+    color:#ff4f81;
+    margin-top:20px;
+
+}
+
+footer{
+
+    margin-top:35px;
+    color:#888;
+    font-size:14px;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h1>Nosso Encontro ❤️</h1>
+
+<p class="sub">
+01 de Agosto de 2026 • Juazeiro do Norte
+</p>
+
+<div class="historia">
+
+<p>
+🌾 <strong>Lucia</strong>, a menina da roça que nunca desistiu dos seus sonhos.
+Depois de muitos anos estudando e trabalhando, conquistou aquilo que sempre quis:
+ser <strong>Médica Veterinária</strong>, cuidando dos animais com todo amor do mundo.
+</p>
+
+<br>
+
+<p>
+💻 Em 2021, eu deixei minha cidade e fui para São Paulo.
+Comecei uma nova fase estudando programação, enfrentando desafios e aprendendo todos os dias até me tornar o desenvolvedor que sou hoje.
+</p>
+
+<br>
+
+<p>
+❤️ Mesmo com quilômetros de distância, nossos caminhos se encontraram.
+Agora falta cada vez menos para o nosso encontro.
+</p>
+
+</div>
+
+<div class="contador">
+
+<div class="box">
+<div id="dias" class="numero">0</div>
+<div class="texto">Dias</div>
+</div>
+
+<div class="box">
+<div id="horas" class="numero">0</div>
+<div class="texto">Horas</div>
+</div>
+
+<div class="box">
+<div id="minutos" class="numero">0</div>
+<div class="texto">Minutos</div>
+</div>
+
+<div class="box">
+<div id="segundos" class="numero">0</div>
+<div class="texto">Segundos</div>
+</div>
+
+</div>
+
+<div class="frase" id="mensagem">
+Cada segundo nos aproxima de mais um abraço. ❤️
+</div>
+
+<footer>
+
+🐾 Lucia + Mauricio 💻
+
+</footer>
+
+</div>
+
+<script>
+
+const viagem = new Date("2026-08-01T00:00:00");
+
+function atualizar(){
+
+const agora = new Date();
+
+const diferenca = viagem - agora;
+
+if(diferenca <= 0){
+
+document.getElementById("mensagem").innerHTML =
+"Finalmente juntos! ❤️";
+
+document.getElementById("dias").innerHTML=0;
+document.getElementById("horas").innerHTML=0;
+document.getElementById("minutos").innerHTML=0;
+document.getElementById("segundos").innerHTML=0;
+
+return;
+
+}
+
+const dias=Math.floor(diferenca/(1000*60*60*24));
+const horas=Math.floor((diferenca%(1000*60*60*24))/(1000*60*60));
+const minutos=Math.floor((diferenca%(1000*60*60))/(1000*60));
+const segundos=Math.floor((diferenca%(1000*60))/1000);
+
+document.getElementById("dias").innerHTML=dias;
+document.getElementById("horas").innerHTML=horas;
+document.getElementById("minutos").innerHTML=minutos;
+document.getElementById("segundos").innerHTML=segundos;
+
+}
+
+atualizar();
+
+setInterval(atualizar,1000);
+
+</script>
+
+</body>
+</html>
